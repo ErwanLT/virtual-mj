@@ -9,14 +9,15 @@ public class OllamaClient {
 
     private final ChatClient chatClient;
 
-    public OllamaClient(ChatClient chatClient) {
-        this.chatClient = chatClient;
+    public OllamaClient(ChatClient.Builder builder, DiceTool diceTool) {
+        this.chatClient = builder
+                .defaultFunction("diceTool", diceTool)
+                .build();
     }
 
     public String chat(String prompt) {
         return chatClient
                 .prompt(prompt)
-                .toolNames("diceTool")
                 .call()
                 .content();
     }
