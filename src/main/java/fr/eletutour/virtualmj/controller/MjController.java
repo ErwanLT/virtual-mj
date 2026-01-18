@@ -18,8 +18,11 @@ public class MjController {
     }
 
     @PostMapping("/play")
-    public ResponseEntity<String> play(@RequestBody String playerAction) {
-        String narrate = mjService.play(playerAction);
+    public ResponseEntity<String> play(@RequestBody PlayRequest request) {
+        String narrate = mjService.play(request.playerAction());
         return ResponseEntity.ok(narrate);
+    }
+
+    public record PlayRequest(String playerAction) {
     }
 }
