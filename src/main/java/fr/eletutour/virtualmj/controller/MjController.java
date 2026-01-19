@@ -23,6 +23,15 @@ public class MjController {
         return ResponseEntity.ok(narrate);
     }
 
+    @PostMapping("/create-character")
+    public ResponseEntity<String> createCharacter(@RequestBody CharacterCreationRequest request) {
+        String characterSheet = mjService.createCharacter(request.description());
+        return ResponseEntity.ok(characterSheet);
+    }
+
     public record PlayRequest(String playerAction) {
+    }
+
+    public record CharacterCreationRequest(String description) {
     }
 }
