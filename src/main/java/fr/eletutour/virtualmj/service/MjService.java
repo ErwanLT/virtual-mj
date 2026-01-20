@@ -46,7 +46,7 @@ public class MjService {
     }
 
     public String createCharacter(String characterDescription) {
-        List<Document> rules = ruleRagService.findRelevantRules("création de personnage " + characterDescription);
+        List<Document> rules = ruleRagService.findRelevantRules("création d'un personnage");
         String rulesContext = rules.stream()
                 .map(Document::getFormattedContent)
                 .collect(Collectors.joining("\n\n"));

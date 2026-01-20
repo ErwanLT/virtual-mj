@@ -1,5 +1,7 @@
 package fr.eletutour.virtualmj.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.VectorStore;
@@ -16,6 +18,8 @@ import java.util.Map;
 
 @Service
 public class RuleIngestionService {
+
+    private final Logger log = LoggerFactory.getLogger(RuleIngestionService.class);
 
     private final VectorStore vectorStore;
     private final ResourcePatternResolver resolver;
@@ -61,7 +65,7 @@ public class RuleIngestionService {
         // 4. Ingestion
         if (!splitDocuments.isEmpty()) {
             vectorStore.add(splitDocuments);
-            System.out.println("Ingestion terminée : " + rawDocuments.size() + " fichiers transformés en " + splitDocuments.size() + " segments.");
+            log.info("Ingestion terminée : {} fichiers transformés en {} segment", rawDocuments.size(), splitDocuments.size());
         }
     }
 }

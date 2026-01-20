@@ -1,6 +1,7 @@
 package fr.eletutour.virtualmj.service;
 
 import fr.eletutour.virtualmj.llm.OllamaClient;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -8,6 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ai.document.Document;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.List;
 
@@ -26,6 +29,12 @@ class MjServiceTest {
 
     @InjectMocks
     private MjService mjService;
+
+    @BeforeEach
+    void setUp() {
+        ReflectionTestUtils.setField(mjService, "playPromptResource", new ClassPathResource("prompts/play-prompt.st"));
+        ReflectionTestUtils.setField(mjService, "createCharacterPromptResource", new ClassPathResource("prompts/create-character-prompt.st"));
+    }
 
     @Test
     @DisplayName("Should play turn correctly")
