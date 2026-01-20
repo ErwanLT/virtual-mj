@@ -33,7 +33,7 @@ public class OllamaClient {
                 .call()
                 .content();
 
-        log.debug("Response received: {}", response);
+        log.debug("Response received:\n {}", response);
         return response;
     }
 }
