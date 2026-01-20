@@ -3,8 +3,8 @@ Les humains sont la race la plus répandue et la plus polyvalente dans la plupar
 
 ## Traits raciaux de l'humain
 - **Augmentation de caractéristiques** : Tous vos scores de caractéristiques augmentent de 1.
-- **Âge** : Les humains atteignent l'âge adulte à l'adolescence et vivent moins d'un siècle.
-- **Alignement** : Les humains n'ont pas de penchant particulier pour un alignement. Individuellement, ils penchent vers le bien ou le mal, la loi ou le chaos.
-- **Taille** : Les humains mesurent entre 1,50 mètre et 1,80 mètre et ont une corpulence moyenne. Votre taille est Moyenne.
+- **Âge** : Les humains atteignent l'âge adulte à la fin de l'adolescence et vivent moins d'un siècle.
+- **Alignement** : Les humains n'ont pas de penchant particulier pour un alignement. Le meilleur et le pire s'y retrouvent.
+- **Taille** : La taille et la corpulence des humains varient énormément, de 1,50 m à 1,80 m. Votre taille est Moyenne.
 - **Vitesse** : Votre vitesse de déplacement de base est de 9 mètres.
-- **Langues** : Vous pouvez parler, lire et écrire le commun et une langue supplémentaire de votre choix. Les humains sont réputés pour leur capacité à s'adapter et à apprendre rapidement de nouvelles langues.
+- **Langues** : Vous pouvez parler, lire et écrire le commun et une langue supplémentaire de votre choix.
