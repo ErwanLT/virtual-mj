@@ -15,6 +15,17 @@ Virtual MJ est une application backend conçue pour agir comme un maître du jeu
 
 Pour fournir des réponses précises et contextuelles sur les règles du jeu, l'application utilise une approche RAG. Les documents contenant les règles sont chargés au démarrage de l'application dans la base de données vectorielle Chroma.
 
+```curl
+curl -X POST 'http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "rules",
+    "metadata": { "hnsw:space": "cosine" },
+    "get_or_create": true
+  }
+```
+Création de la base de règles dans chroma.
+
 Les documents utilisés sont tous les fichiers Markdown (`.md`) situés dans le répertoire :
 `src/main/resources/rules/`
 
