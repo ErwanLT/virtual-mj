@@ -1,3 +1,8 @@
+---
+domain: character
+topic: creation
+race: halfelin
+---
 # Halfelin
 Les halfelins sont des gens petits, mais résistants, reconnus pour leur agilité et leur chance. Ils sont souvent des voyageurs, explorant le monde et vivant en harmonie avec la terre. Ils apprécient les conforts du foyer, la bonne nourriture, et la camaraderie, et ont un talent naturel pour la furtivité et la dissimulation.
 

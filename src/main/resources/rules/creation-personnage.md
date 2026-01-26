@@ -1,3 +1,7 @@
+---
+domain: character
+topic: creation
+---
 # CREATION D'UN PERSONNAGE
 La première étape d'une partie de Dungeons & Dragons
 est d'imaginer et de se créer son propre personnage. Un
@@ -119,7 +123,7 @@ aventuriers, bien qu'il ait pu être un soldat ou un pirate et
 avoir déjà affronté le danger par le passé.
 Débuter au 1er niveau marque l'entrée de votre
 personnage dans la vie d'aventurier. Si vous avez déjà une
-expérience du jeu, ou si vous rejoignez une campagne
+expérience du jeu, ou si yous rejoignez une campagne
 www.aidedd.org D&D PLAYER’S BASIC RULES 7
 existante, votre MD peut décider de vous faire débuter à
 un niveau plus élevé, considérant que votre personnage a

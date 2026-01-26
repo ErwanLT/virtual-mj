@@ -33,7 +33,8 @@ class MjServiceTest {
     @BeforeEach
     void setUp() {
         ReflectionTestUtils.setField(mjService, "playPromptResource", new ClassPathResource("prompts/play-prompt.st"));
-        ReflectionTestUtils.setField(mjService, "createCharacterPromptResource", new ClassPathResource("prompts/create-character-prompt.st"));
+        ReflectionTestUtils.setField(mjService, "createCharacterPromptResource",
+                new ClassPathResource("prompts/create-character-prompt.st"));
     }
 
     @Test
@@ -58,20 +59,28 @@ class MjServiceTest {
     }
 
     @Test
-    @DisplayName("Should handle empty rules")
-    void shouldHandleEmptyRules() {
+    @DisplayName("Should create character correctly")
+    void shouldCreateCharacter() {
         // Given
-        String playerAction = "Je danse";
-        String expectedResponse = "Vous dansez avec grâce.";
+        fr.eletutour.virtualmj.dto.CharacterCreationRequest request = new fr.eletutour.virtualmj.dto.CharacterCreationRequest(
+                "Gimli",
+                fr.eletutour.virtualmj.dto.CharacterRace.NAIN,
+                "Montagne",
+                fr.eletutour.virtualmj.dto.CharacterClass.GUERRIER,
+                "Un nain robuste");
+        String expectedResponse = "Fiche de personnage...";
 
-        when(ruleRagService.findRelevantRules(playerAction))
-                .thenReturn(List.of());
+        when(ruleRagService.findRelevantRules(request))
+                .thenReturn(List.of(new Document("Règles nains...")));
+
         when(ollamaClient.chat(anyString())).thenReturn(expectedResponse);
 
         // When
-        String result = mjService.play(playerAction);
+        String result = mjService.createCharacter(request);
 
         // Then
         assertEquals(expectedResponse, result);
+        verify(ruleRagService).findRelevantRules(request);
+        verify(ollamaClient).chat(anyString());
     }
 }

@@ -1,3 +1,7 @@
+---
+domain: character
+topic: creation
+---
 # Races
 Une visite dans l'une des plus grandes cité des mondes de
 D&D, que ce soit Eauprofonde, la cité libre de Faucon

@@ -1,3 +1,7 @@
+---
+domain: character
+topic: creation
+---
 # Guerrier
 Un humain en armure de plaques retentissante tient son
 bouclier devant lui tout en fonçant vers des gobelins

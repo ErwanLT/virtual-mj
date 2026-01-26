@@ -14,7 +14,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -27,20 +26,36 @@ class RuleRagServiceTest {
     private RuleRagService ruleRagService;
 
     @Test
-    @DisplayName("Should find relevant rules")
-    void shouldFindRelevantRules() {
+    @DisplayName("Should find relevant rules for character creation with filtering")
+    void shouldFindRelevantRulesForCharacterCreation() {
         // Given
-        String query = "combat";
-        List<Document> expectedDocs = List.of(new Document("Règles de combat"));
+        fr.eletutour.virtualmj.dto.CharacterCreationRequest request = new fr.eletutour.virtualmj.dto.CharacterCreationRequest(
+                "Legolas",
+                fr.eletutour.virtualmj.dto.CharacterRace.ELFE,
+                "Sylvestre",
+                fr.eletutour.virtualmj.dto.CharacterClass.ROUBLARD,
+                "Un elfe agile");
 
+        Document elfRule = new Document("Règle Elfe",
+                java.util.Map.of("domain", "character", "topic", "creation", "race", "elfe"));
+        Document dwarfRule = new Document("Règle Nain",
+                java.util.Map.of("domain", "character", "topic", "creation", "race", "nain"));
+        Document classRule = new Document("Règle Roublard",
+                java.util.Map.of("domain", "character", "topic", "creation", "class", "roublard"));
+
+        // Mock returns mixed results
         when(vectorStore.similaritySearch(any(SearchRequest.class)))
-                .thenReturn(expectedDocs);
+                .thenReturn(List.of(elfRule, dwarfRule, classRule));
 
         // When
-        List<Document> result = ruleRagService.findRelevantRules(query);
+        List<Document> result = ruleRagService.findRelevantRules(request);
 
         // Then
-        assertEquals(expectedDocs, result);
-        verify(vectorStore).similaritySearch(any(SearchRequest.class));
+        // Should keep Elf (matches race) and Rogue (matches class) but NOT Dwarf (wrong
+        // race)
+        assertEquals(2, result.size());
+        assert (result.contains(elfRule));
+        assert (result.contains(classRule));
+        assert (!result.contains(dwarfRule));
     }
 }

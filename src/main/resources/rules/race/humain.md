@@ -1,3 +1,8 @@
+---
+domain: character
+topic: creation
+race: humain
+---
 # Humain
 Les humains sont la race la plus répandue et la plus polyvalente dans la plupart des mondes de D&D. Ils n'ont pas la longévité des elfes, la robustesse des nains, ou les liens innés avec la magie de certaines autres races. Cependant, ils compensent cela par une adaptabilité et une ambition sans égales. Ils vivent souvent dans des cités imposantes et des royaumes prospères, et sont des pionniers et des explorateurs, s'étendant dans toutes les régions du monde.
 

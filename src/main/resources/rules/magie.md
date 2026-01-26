@@ -1,3 +1,7 @@
+---
+domain: gameplay
+topic: magic
+---
 # Règles de Magie - D&D 5e
 
 ## Lancer un Sort

@@ -1,3 +1,8 @@
+---
+domain: character
+topic: creation
+race: nain
+---
 # Nain
 Les nains sont des artisans et des guerriers robustes, connus pour leur endurance, leur amour de la pierre, leur haine des gobelinoïdes et des orques, et leurs longs souvenirs. Ils vivent dans des royaumes souterrains sous les montagnes, où ils extraient des trésors de la terre et forgent des objets d'une beauté et d'une utilité inégalées.
 

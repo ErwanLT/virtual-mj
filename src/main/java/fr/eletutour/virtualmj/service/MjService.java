@@ -23,7 +23,6 @@ public class MjService {
     @Value("classpath:/prompts/create-character-prompt.st")
     private Resource createCharacterPromptResource;
 
-
     public MjService(OllamaClient ollamaClient, RuleRagService ruleRagService) {
         this.ollamaClient = ollamaClient;
         this.ruleRagService = ruleRagService;
@@ -37,25 +36,23 @@ public class MjService {
 
         PromptTemplate promptTemplate = new PromptTemplate(playPromptResource);
         Map<String, Object> model = Map.of(
-            "rulesContext", rulesContext,
-            "playerAction", playerAction
-        );
+                "rulesContext", rulesContext,
+                "playerAction", playerAction);
         String prompt = promptTemplate.render(model);
 
         return ollamaClient.chat(prompt);
     }
 
-    public String createCharacter(String characterDescription) {
-        List<Document> rules = ruleRagService.findRelevantRules("création d'un personnage");
+    public String createCharacter(fr.eletutour.virtualmj.dto.CharacterCreationRequest request) {
+        List<Document> rules = ruleRagService.findRelevantRules(request);
         String rulesContext = rules.stream()
                 .map(Document::getFormattedContent)
                 .collect(Collectors.joining("\n\n"));
 
         PromptTemplate promptTemplate = new PromptTemplate(createCharacterPromptResource);
         Map<String, Object> model = Map.of(
-            "rulesContext", rulesContext,
-            "description", characterDescription
-        );
+                "rulesContext", rulesContext,
+                "description", request.description());
         String prompt = promptTemplate.render(model);
 
         return ollamaClient.chat(prompt);

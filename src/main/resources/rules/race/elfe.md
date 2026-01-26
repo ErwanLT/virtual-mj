@@ -1,3 +1,8 @@
+---
+domain: character
+topic: creation
+race: elfe
+---
 # Elfe
 Les elfes sont des créatures d'une grâce éthérée et d'une beauté intemporelle. Ils vivent dans les forêts antiques, dans des villes faites d'arbres ou dans des cités scintillantes d'une beauté magique. Ils sont connus pour leur amour de la nature, de l'art, de la musique et de la magie. Leur longue durée de vie leur confère une perspective unique sur le monde et un certain détachement face aux événements éphémères.
 

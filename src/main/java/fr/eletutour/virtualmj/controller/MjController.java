@@ -24,14 +24,12 @@ public class MjController {
     }
 
     @PostMapping("/create-character")
-    public ResponseEntity<String> createCharacter(@RequestBody CharacterCreationRequest request) {
-        String characterSheet = mjService.createCharacter(request.description());
+    public ResponseEntity<String> createCharacter(
+            @RequestBody fr.eletutour.virtualmj.dto.CharacterCreationRequest request) {
+        String characterSheet = mjService.createCharacter(request);
         return ResponseEntity.ok(characterSheet);
     }
 
     public record PlayRequest(String playerAction) {
-    }
-
-    public record CharacterCreationRequest(String description) {
     }
 }

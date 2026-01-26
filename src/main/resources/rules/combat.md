@@ -1,3 +1,7 @@
+---
+domain: gameplay
+topic: combat
+---
 # Règles de Combat - D&D 5e
 
 ## L'Ordre de Marche

@@ -1,3 +1,7 @@
+---
+domain: gameplay
+topic: conditions
+---
 # États et Conditions - D&D 5e
 
 ## À Terre (Prone)

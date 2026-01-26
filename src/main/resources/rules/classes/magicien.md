@@ -1,3 +1,7 @@
+---
+domain: character
+topic: creation
+---
 # Magicien
 Vêtue de robes d'argent qui dénotent son rang, une elfe clôt les yeux pour s'abstraire des distractions du champ de bataille et commence son chant incantatoire. Des doigts se tortillent, elle pointe son index et lance une petite perle de feu vers les rangs ennemis où elle explose dans un brasier qui engloutit les soldats.
 
