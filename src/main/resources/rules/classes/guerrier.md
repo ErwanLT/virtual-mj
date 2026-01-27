@@ -1,6 +1,7 @@
 ---
 domain: character
 topic: creation
+class: guerrier
 ---
 # Guerrier
 Un humain en armure de plaques retentissante tient son

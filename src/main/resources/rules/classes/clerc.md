@@ -1,6 +1,7 @@
 ---
 domain: character
 topic: creation
+class: clerc
 ---
 # Clerc
 Les bras levés vers le soleil couchant, un humain en armure de plaques invoque le nom de son dieu. Une lumière divine jaillit de sa main et frappe un groupe d'orques qui reculent devant sa puissance.

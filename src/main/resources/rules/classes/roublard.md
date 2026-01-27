@@ -1,6 +1,7 @@
 ---
 domain: character
 topic: creation
+class: roublard
 ---
 # Roublard
 Un murmure dans l'ombre, un frôlement fugace, puis le cliquetis d'une serrure qui cède. Une dague dans le dos, une bourse qui disparaît, une blague bien sentie au moment où l'on s'y attend le moins. Le roublard est un maître de la discrétion, de la ruse et de la tromperie. C'est un aventurier qui préfère la finesse à la force brute, l'astuce à la confrontation directe.
