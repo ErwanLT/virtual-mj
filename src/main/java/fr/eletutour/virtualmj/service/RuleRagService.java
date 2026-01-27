@@ -1,5 +1,6 @@
 package fr.eletutour.virtualmj.service;
 
+import fr.eletutour.virtualmj.dto.CharacterCreationRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.document.Document;
@@ -28,9 +29,11 @@ public class RuleRagService {
         return findRelevantRulesInternal(query, null, null);
     }
 
-    public List<Document> findRelevantRules(fr.eletutour.virtualmj.dto.CharacterCreationRequest request) {
+    public List<Document> findRelevantRules(CharacterCreationRequest request) {
         log.info("Finding relevant rules for character creation: {}", request);
-        return findRelevantRulesInternal("création personnage", request.race().getValue(), request.job().getValue());
+        String enrichedQuery = String.format("création personnage %s %s", request.race().getValue(),
+                request.job().getValue());
+        return findRelevantRulesInternal(enrichedQuery, request.race().getValue(), request.job().getValue());
     }
 
     private List<Document> findRelevantRulesInternal(String query, String raceFilter, String classFilter) {
@@ -40,8 +43,8 @@ public class RuleRagService {
         List<Document> rawResults = vectorStore.similaritySearch(
                 SearchRequest.builder()
                         .query(query)
-                        .topK(50)
-                        .similarityThreshold(0.35)
+                        .topK(200)
+                        .similarityThreshold(0.25)
                         .build());
 
         // 2. Filtrage "Jekyll-like" par métadonnées SI PRÉSENTES

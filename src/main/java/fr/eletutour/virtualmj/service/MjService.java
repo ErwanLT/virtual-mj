@@ -1,5 +1,6 @@
 package fr.eletutour.virtualmj.service;
 
+import fr.eletutour.virtualmj.dto.CharacterCreationRequest;
 import fr.eletutour.virtualmj.llm.OllamaClient;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.document.Document;
@@ -43,7 +44,7 @@ public class MjService {
         return ollamaClient.chat(prompt);
     }
 
-    public String createCharacter(fr.eletutour.virtualmj.dto.CharacterCreationRequest request) {
+    public String createCharacter(CharacterCreationRequest request) {
         List<Document> rules = ruleRagService.findRelevantRules(request);
         String rulesContext = rules.stream()
                 .map(Document::getFormattedContent)
@@ -52,7 +53,7 @@ public class MjService {
         PromptTemplate promptTemplate = new PromptTemplate(createCharacterPromptResource);
         Map<String, Object> model = Map.of(
                 "rulesContext", rulesContext,
-                "description", request.description());
+                "description", request.toString());
         String prompt = promptTemplate.render(model);
 
         return ollamaClient.chat(prompt);
