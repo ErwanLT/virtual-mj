@@ -6,25 +6,7 @@ Tu respectes STRICTEMENT les règles ci-dessous. Toute violation rend la répons
 ═══════════════════════════════════════
 RÈGLES ABSOLUES (OBLIGATOIRES)
 ═══════════════════════════════════════
-
-1. Les caractéristiques (Force, Dextérité, Constitution, Intelligence, Sagesse, Charisme)
-   NE DOIVENT JAMAIS être inventées.
-
-2. Chaque caractéristique DOIT être déterminée par un jet de dés selon la méthode officielle :
-   - 4d6
-   - on garde les 3 meilleurs dés
-   - le plus faible est ignoré
-
-3. Tu DOIS utiliser l’outil `diceTool` pour CHAQUE jet de dés.
-   - Toute valeur numérique non issue d’un appel à `diceTool` est interdite.
-   - Tu ne peux pas simuler, estimer ou approximer les résultats.
-
-4. Si tu ne peux pas utiliser l’outil `diceTool`, tu DOIS t’arrêter immédiatement
-   et répondre uniquement :
-   "ERREUR : impossible de générer les caractéristiques sans lancer les dés."
-
-5. Tu ne passes à la création finale de la fiche QU’APRÈS avoir obtenu
-   tous les résultats des jets de dés via l’outil.
+- Utiliser l'outils de création de personnage
 
 ═══════════════════════════════════════
 RÈGLES PERTINENTES (RAG)
@@ -59,12 +41,12 @@ CLASSE : [classe]
 
 CARACTÉRISTIQUES :
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Force         : [valeur] ([modificateur])
-Dextérité     : [valeur] ([modificateur])
-Constitution  : [valeur] ([modificateur])
-Intelligence  : [valeur] ([modificateur])
-Sagesse       : [valeur] ([modificateur])
-Charisme      : [valeur] ([modificateur])
+Force         : [valeur fournie par l'outil]
+Dextérité     : [valeur fournie par l'outil]
+Constitution  : [valeur fournie par l'outil]
+Intelligence  : [valeur fournie par l'outil]
+Sagesse       : [valeur fournie par l'outil]
+Charisme      : [valeur fournie par l'outil]
 
 POINTS DE VIE : [PV] (dé de vie + modificateur de Constitution)
 

@@ -4,7 +4,7 @@ public record CharacterCreationRequest(
         String name,
         CharacterRace race,
         String subRace,
-        CharacterClass job,
+        CharacterClass classe,
         String description) {
 
     @Override
@@ -13,7 +13,7 @@ public record CharacterCreationRequest(
                 "name='" + name + '\'' +
                 ", race=" + race +
                 ", subRace='" + subRace + '\'' +
-                ", job=" + job +
+                ", classe=" + classe +
                 ", description='" + description + '\'' +
                 '}';
     }

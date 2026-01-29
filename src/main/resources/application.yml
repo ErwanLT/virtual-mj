@@ -5,11 +5,15 @@ spring:
       chat:
         options:
           model: llama3.2
-          temperature: 0.7
+          temperature: 0.2
   main:
     allow-bean-definition-overriding: true
 
 logging:
   level:
+    # Pour voir les logs internes de ta propre appli
     fr.eletutour.virtualmj: DEBUG
-    org.springframework.ai: DEBUG
+    # C'est LA ligne qui manque souvent pour voir les payloads Ollama
+    org.springframework.ai.ollama.api: DEBUG
+    # Optionnel : Pour voir les entêtes HTTP globaux
+    org.springframework.web.client.RestClient: DEBUG

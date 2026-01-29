@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
-import org.springframework.ai.vectorstore.filter.FilterExpressionBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,8 +31,8 @@ public class RuleRagService {
     public List<Document> findRelevantRules(CharacterCreationRequest request) {
         log.info("Finding relevant rules for character creation: {}", request);
         String enrichedQuery = String.format("création personnage %s %s", request.race().getValue(),
-                request.job().getValue());
-        return findRelevantRulesInternal(enrichedQuery, request.race().getValue(), request.job().getValue());
+                request.classe().getValue());
+        return findRelevantRulesInternal(enrichedQuery, request.race().getValue(), request.classe().getValue());
     }
 
     private List<Document> findRelevantRulesInternal(String query, String raceFilter, String classFilter) {

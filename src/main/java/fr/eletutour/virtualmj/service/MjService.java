@@ -45,15 +45,26 @@ public class MjService {
     }
 
     public String createCharacter(CharacterCreationRequest request) {
-        List<Document> rules = ruleRagService.findRelevantRules(request);
-        String rulesContext = rules.stream()
-                .map(Document::getFormattedContent)
-                .collect(Collectors.joining("\n\n"));
 
+        String description = String.format(
+                "Le joueur veut créer un personnage. " +
+                        "Nom: %s. " +
+                        "Race: %s. " +
+                        "Sous Races: %s. " +
+                        "Classe: %s. " +
+                        "Description: %s",
+                request.name(),
+                request.race().getValue(),
+                request.subRace(),
+                request.classe().getValue(),
+                request.description()
+        );
+
+        String rulesContext = "Utilise uniquement l'outil fourni pour générer les stats.";
         PromptTemplate promptTemplate = new PromptTemplate(createCharacterPromptResource);
         Map<String, Object> model = Map.of(
                 "rulesContext", rulesContext,
-                "description", request.toString());
+                "description", description);
         String prompt = promptTemplate.render(model);
 
         return ollamaClient.chat(prompt);
