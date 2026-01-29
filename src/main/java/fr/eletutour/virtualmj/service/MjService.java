@@ -46,27 +46,32 @@ public class MjService {
 
     public String createCharacter(CharacterCreationRequest request) {
 
+        // 1. RAG CIBLÉ : On cherche spécifiquement du "Lore"
+        // On utilise la méthode qui filtre par métadonnées
+        List<Document> rules = ruleRagService.findRelevantRules(request);
+
+        String rulesContext = rules.stream()
+                .map(Document::getText)
+                .collect(Collectors.joining("\n---\n"));
+
+        // 2. DESCRIPTION PROPRE (Format "Phrase Naturelle")
         String description = String.format(
-                "Le joueur veut créer un personnage. " +
-                        "Nom: %s. " +
-                        "Race: %s. " +
-                        "Sous Races: %s. " +
-                        "Classe: %s. " +
-                        "Description: %s",
+                "Le joueur veut créer un personnage. Nom: %s. Race: %s. Sous-race: %s. Classe: %s. Description: %s",
                 request.name(),
                 request.race().getValue(),
-                request.subRace(),
+                (request.subRace() != null ? request.subRace() : "Non spécifiée"),
                 request.classe().getValue(),
                 request.description()
         );
 
-        String rulesContext = "Utilise uniquement l'outil fourni pour générer les stats.";
+        // 3. PRÉPARATION DU PROMPT
         PromptTemplate promptTemplate = new PromptTemplate(createCharacterPromptResource);
         Map<String, Object> model = Map.of(
                 "rulesContext", rulesContext,
                 "description", description);
         String prompt = promptTemplate.render(model);
 
+        // 4. OPTIONS AUTORITAIRES
         return ollamaClient.chat(prompt);
     }
 }

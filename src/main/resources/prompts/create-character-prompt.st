@@ -4,17 +4,22 @@ Tu dois créer une fiche de personnage complète pour le joueur.
 Tu respectes STRICTEMENT les règles ci-dessous. Toute violation rend la réponse invalide.
 
 ═══════════════════════════════════════
-RÈGLES ABSOLUES (OBLIGATOIRES)
+RÈGLES ABSOLUES
 ═══════════════════════════════════════
-- Utiliser l'outils de création de personnage
+1. Utiliser l'outil 'characterCreator' pour obtenir les STATISTIQUES (Force, Dex, PV...).
+2. NE JAMAIS inventer de stats.
+3. NE JAMAIS recopier le JSON technique dans la réponse finale.
 
 ═══════════════════════════════════════
-RÈGLES PERTINENTES (RAG)
+CONTEXTE NARRATIF (LORE)
 ═══════════════════════════════════════
 {rulesContext}
 
+INSTRUCTION : Utilise ce contexte narratif UNIQUEMENT pour rédiger la section "DESCRIPTION"
+(physique, caractère, origines). N'utilise pas ce texte pour les chiffres.
+
 ═══════════════════════════════════════
-DESCRIPTION DU PERSONNAGE PAR LE JOUEUR
+DEMANDE DU JOUEUR
 ═══════════════════════════════════════
 {description}
 

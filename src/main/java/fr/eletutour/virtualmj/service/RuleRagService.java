@@ -30,37 +30,35 @@ public class RuleRagService {
 
     public List<Document> findRelevantRules(CharacterCreationRequest request) {
         log.info("Finding relevant rules for character creation: {}", request);
-        String enrichedQuery = String.format("création personnage %s %s", request.race().getValue(),
+        String searchQuery = String.format("Description physique, mentale et culturelle pour la race %s et la classe %s",
+                request.race().getValue(),
                 request.classe().getValue());
-        return findRelevantRulesInternal(enrichedQuery, request.race().getValue(), request.classe().getValue());
+        return findRelevantRulesInternal(searchQuery, request.race().getValue(), request.classe().getValue());
     }
 
     private List<Document> findRelevantRulesInternal(String query, String raceFilter, String classFilter) {
         log.info("Internal search: query='{}', race='{}', class='{}'", query, raceFilter, classFilter);
 
-        // 1. Recherche large (overshoot volontaire)
+        // 1. Recherche : on réduit topK à 50 (suffisant) et on remonte le threshold
         List<Document> rawResults = vectorStore.similaritySearch(
                 SearchRequest.builder()
                         .query(query)
-                        .topK(200)
-                        .similarityThreshold(0.25)
+                        .topK(50) // On calme le jeu ici
+                        .similarityThreshold(0.4) // On veut des trucs pertinents, pas du bruit
                         .build());
 
-        // 2. Filtrage "Jekyll-like" par métadonnées SI PRÉSENTES
+        // 2. Filtrage Java (inchangé, ta logique est bonne)
         List<Document> filtered = rawResults.stream()
                 .filter(doc -> isRelevantForCharacterCreation(doc, raceFilter, classFilter))
                 .toList();
 
-        // 3. Déduplication (limit removed)
+        // 3. Déduplication ET LIMITATION DRASTIQUE
         List<Document> uniqueRules = filtered.stream()
                 .filter(distinctByKey(Document::getText))
+                .limit(3)
                 .toList();
 
-        log.info(
-                "Found {} raw hits, {} after metadata filtering, returning {} unique rules",
-                rawResults.size(),
-                filtered.size(),
-                uniqueRules.size());
+        log.info("Returning {} unique rules (limited to top 3)", uniqueRules.size());
 
         return uniqueRules;
     }
@@ -69,7 +67,7 @@ public class RuleRagService {
         Map<String, Object> meta = doc.getMetadata();
 
         // Si pas de métadonnées → on garde (fallback sécurité)
-        if (meta == null || meta.isEmpty()) {
+        if (meta.isEmpty()) {
             log.debug("Document kept (no metadata): {}", doc.getId());
             return true;
         }
@@ -121,10 +119,7 @@ public class RuleRagService {
             if (domain != null && !domain.equalsIgnoreCase("character")) {
                 return false;
             }
-            if (topic != null && !topic.equalsIgnoreCase("creation")) {
-                return false;
-            }
-            return true;
+            return topic == null || topic.equalsIgnoreCase("creation");
         }
     }
 

@@ -44,12 +44,6 @@ feuille de personnage officielle D&D est un bon point de
 départ, pour savoir quoi noter et comment l'utiliser
 pendant le jeu.
 
->**CRÉATION DE BRUENOR**
-> 
->Chaque étape de la création d'un personnage est illustrée par
->un encart, où un joueur nommé Bob crée son personnage nain,
->Bruenor.
-
 ## CHOISIR UNE RACE
 Tout personnage appartient à une race, l'une des
 nombreuses espèces intelligentes du monde de D&D. Les
@@ -82,14 +76,6 @@ ces modificateurs et souvenez-vous de les appliquer.
 Notez les traits accordés par votre race sur la feuille de
 personnage. N'oubliez pas de noter aussi les langues
 connues de base, ainsi que votre vitesse de déplacement.
-
->**CRÉATION DE BRUENOR, ÉTAPE 1**
->
->Bob décide qu'un nain des montages bourru représenterait
->bien le personnage qu'il veut jouer. Il note tous les traits
->raciaux des nains sur sa feuille de personnage, ainsi que sa
->vitesse de base de 7,50 mètres et les langues connues : le
->commun et le nain.
 
 ## CHOISIR UNE CLASSE
 Tout aventurier est membre d'une classe. Une classe
@@ -187,19 +173,6 @@ avant de l'appliquer. Si une situation semble suggérer que
 vous pouvez appliquer ou modifier votre bonus plus d'une
 fois, n'en tenez pas compte. Le bonus de maîtrise ne
 s'applique ou ne se modifie qu'une seule fois.
-
->CRÉATION DE BRUENOR, ÉTAPE 2
-> 
->Bob s'imagine Bruenor chargeant dans un combat avec une
-hache, l'une des cornes de son casque manquante. Il fait de
-Bruenor un guerrier, et note sur sa feuille de personnage les
-capacités et les maîtrises de son personnage au 1er niveau.
-> 
->En tant que guerrier de niveau 1, Bruenor a 1 Dé de Vie – un
-d10 – et débute avec un total de points de vie égal à 10 + son
-modificateur de Constitution, qu'il indiquera après avoir défini
-la Constitution de Bruenor à l'étape 3. Bob note aussi le bonus
-de maîtrise de +2 qui correspond à un personnage de niveau 1.
 
 ## DETERMINER LES VALEURS DE CARACTERISTIQUES
 La majorité des actions de votre personnage dépend de
@@ -303,32 +276,6 @@ série où les valeurs sont quasiment égales (13, 13, 13, 12,
 | 14     | 7    |
 | 15     | 9    |
 
->CONSTRUCTION RAPIDE
->
->Chaque description de classe comporte un encart offrant des
-suggestions pour construire rapidement un personnage de la
-classe concernée, indiquant comment attribuer vos plus hautes
-valeurs de caractéristiques, un background adapté à la classe,
-et une liste des sorts de départ si besoin
-
->**CRÉATION DE BRUENOR, ÉTAPE 3**
->
->Bob décide d'utiliser la distribution de valeurs standards (15,
-14, 13, 12, 10, 8) pour les caractéristiques de Bruenor. Puisque
-c'est un guerrier, il met la plus haute valeur, 15, en Force. La
-valeur suivante, 14, en Constitution. Bruenor pourrait être un
-casse-cou, mais Bob veut que le nain soit plus vieux, plus sage,
-et bon leader, il place donc de bonnes valeurs en Sagesse et
->
->Charisme. Après avoir fait les modifications dues à la race
-(augmentation de la Constitution et de la Force de +2), les
-valeurs et modificateurs de caractéristiques de Bruenor sont
-les suivants : Force 17 (+3), Dextérité 10 (+0), Constitution 16
-(+3), Intelligence 8 (-1), Sagesse 13 (+1), Charisme 12 (+1).
-Bob finalise les points de vie de Bruenor : 10 + son
-modificateur de Constitution (+3) pour un total de 13 points de
-vie.
-
 ## DECRIRE SON PERSONNAGE
 Une fois déterminée la base de jeu de votre personnage, il
 est temps de l'étoffer et de lui donner « vie ». Votre
@@ -391,38 +338,6 @@ forte confiance en soi, est l'apanage d'un fort Charisme. A
 l'opposé, le personnage sera rude, ou peu loquace, ou
 encore timide.
 
->**CRÉATION DE BRUENOR, ÉTAPE 4**
-> 
->Bob continu de remplir la feuille de Bruenor : son nom, son
-genre (homme), sa taille, son poids et son alignement (Loyal
-Bon). Sa bonne Force et sa haute Constitution suggèrent qu'il
-est en bonne santé, athlétique, alors que son Intelligence plus
-faible indique un manque d'attention.
-> 
->Bob décide que Bruenor descend d'une noble lignée, mais que
-son clan fut chassé de ses terres dans la jeunesse du nain. Il a
-grandit en travaillant comme forgeron dans un village éloigné
-d'Icewind Dale. Mais Bruenor a une destiné héroïque – il doit
-reconquérir ses terres – donc Bob choisit le background Héros
-Populaire. Il note les maîtrises et les aptitudes spéciales
-conférées par ce background.
-> 
->Bob a une idée assez précise de la personnalité de Bruenor, il
-ignore donc les traits de personnalités indiqués dans le
-background, et note plutôt que Bruenor est un nain
-attentionné et sensible qui aime ses amis et ses alliés, mais
-qu'il cache ce cœur tendre derrière un comportement bourru
-et agressif. Il choisit l'idéal d'Équité dans la liste du background,
-indiquant ainsi que Bruenor pense que personne n'est au
-dessus des lois.
-> 
->De par son histoire, le lien de Bruenor est évident : il souhaite
-un jour reprendre Hall Mithril, sa terre natale, au dragon des
-ombres qui en a chassé les nains. Son défaut est lié à sa nature
-attentionnée - il a un préjugé favorable envers les orphelins et
-les âmes rétives, et il montre parfois de la miséricorde sans
-être sûr du résultat.
-
 ## CHOISIR SON EQUIPEMENT
 Votre classe et votre background détermine l’équipement
 de départ de votre personnage, y compris ses armes, son
@@ -471,26 +386,6 @@ Certains sorts et certaines aptitudes de classes peuvent
 modifier le mode de calcul de votre CA. Si vous avez
 plusieurs aptitudes qui modifient le mode de calcul de
 base, vous ne devez en choisir qu'une.
-
->**CRÉATION DE BRUENOR, ÉTAPE 5**
->
->Bob inscrit l'équipement de départ de la classe de guerrier et
-du background de héros populaire. Son équipement de départ
-comprend une cotte de maille et un bouclier, qui combinés
-donne à Bruenor une CA de 18.
-> 
->Pour les armes du nain, Bob choisit une hache d'armes et deux
-haches. La hache d'armes est une arme de mêlée, donc
-Bruenor utilise son modificateur de Force pour l'attaque
-comme pour les dégâts. Son bonus d'attaque est égal à son
-modificateur de Force (+3) plus son bonus de maîtrise (+2), ce
-qui donne un total de +5. La hache d'armes fait 1d8 de dégâts
-tranchant, et Bruenor y ajoute son modificateur de Force
-lorsqu'il touche, pour un total de 1d8+3 de dégâts tranchant.
-Lorsqu'il lance une de ses haches, Bruenor utilise le même
-bonus d'attaque que ci-dessus (les haches, en tant qu'armes de
-lancer, utilisent la Force pour l'attaque et les dégâts), et l'arme
-fait donc 1d6+3 de dégâts tranchant lorsqu'elle touche.
 
 ### ARMES
 Pour chaque arme que le personnage porte, calculez son
